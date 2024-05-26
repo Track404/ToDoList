@@ -1,3 +1,5 @@
+import CreateList from "./createList";
+
 export default function createtoDoItems(
   title,
   description,
@@ -11,3 +13,5 @@ export default function createtoDoItems(
   this.priority = priority;
   this.notes = notes;
 }
+
+createtoDoItems.prototype = CreateList.prototype;

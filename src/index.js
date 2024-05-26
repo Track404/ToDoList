@@ -1,8 +1,9 @@
 import createtoDoItems from "./createItem";
 import CreateList from "./createList";
 import allProject from "./displayAllProject";
-import addInput from "./createNewproject";
+import addInput from "./addNewProject";
 import displayAllTasks from "./displayAllTasks";
+import AddNewTasks from "./addNewTask";
 import "normalize.css";
 import "./style.css";
 import DisplayAllProject from "./displayAllProject";
@@ -17,7 +18,7 @@ let items = new createtoDoItems(
 
 const allMyProject = [];
 
-let toDoList = new CreateList(" project 1");
+let toDoList = new CreateList("Inbox");
 let toDoList1 = new CreateList("big project 2");
 let toDoList2 = new CreateList("big project 3");
 let toDoList3 = new CreateList("big project 4");
@@ -30,20 +31,41 @@ toDoList1.addToMyProject(allMyProject, toDoList1);
 toDoList2.addToMyProject(allMyProject, toDoList2);
 toDoList3.addToMyProject(allMyProject, toDoList3);
 
-const dialog = document.querySelector("dialog");
+const projectDialog = document.querySelector("#projectDialog");
+const taskDialog = document.querySelector("#taskDialog");
 const showButtonProject = document.querySelector("#createProject");
-const closeButton = document.querySelector("dialog button");
+const showButtonTask = document.querySelector("#createTask");
+const closeBtnProject = document.querySelector("#closeBtnProject");
+const closeBtnTask = document.querySelector("#closeBtnTask");
 
 // Le bouton "Afficher la fenêtre" ouvre le dialogue
 showButtonProject.addEventListener("click", () => {
-  dialog.showModal();
+  projectDialog.showModal();
+});
+
+showButtonTask.addEventListener("click", () => {
+  taskDialog.showModal();
 });
 
 // Le bouton "Fermer" ferme le dialogue
-closeButton.addEventListener("click", () => {
+closeBtnProject.addEventListener("click", (event) => {
+  let form = document.querySelector("#formProject");
+  event.preventDefault();
+
   addInput(allMyProject);
   DisplayAllProject(allMyProject);
-  dialog.close();
+  projectDialog.close();
+  form.reset();
+});
+
+closeBtnTask.addEventListener("click", (event) => {
+  let form = document.querySelector("#formTask");
+  event.preventDefault();
+
+  AddNewTasks(toDoList);
+  displayAllTasks(allMyProject);
+  taskDialog.close();
+  form.reset();
 });
 
 allProject(allMyProject);

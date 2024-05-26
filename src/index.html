@@ -10,12 +10,15 @@
       <div id="profile"><h1>MyName</h1></div>
       <div id="allTasks"><h1>allTasks</h1></div>
       <div id="allProject">
-        <dialog>
+        <dialog id="projectDialog">
           <h1>allProject</h1>
-          <button autofocus>Fermer</button>
           <form method="dialog">
             <label for="projectName">Project Name</label>
             <input type="text" name="name" id="projectName" />
+            <div>
+              <button formmethod="dialog">Cancel</button>
+              <button id="closeBtnProject">Confirm</button>
+            </div>
           </form>
           <p>Cette boîte de dialogue modale a un arrière-plan festif !</p>
         </dialog>
@@ -24,7 +27,29 @@
         <div id="project"></div>
       </div>
     </div>
-    <div class="header"><h1>header</h1></div>
+    <div class="header">
+      <h1>header</h1>
+      <button id="createTask">New Task</button>
+      <div id="headerContent"></div>
+      <dialog id="taskDialog">
+        <h1>create your tasks</h1>
+        <form method="dialog">
+          <label for="title">title</label>
+          <input type="text" name="title" id="title" />
+          <label for="dueDate">dueDate</label>
+          <input type="text" name="dueDate" id="dueDate" />
+          <label for="priority">priority</label>
+          <input type="text" name="priority" id="priority" />
+          <label for="description">description</label>
+          <input type="text" name="description" id="description" />
+          <div>
+            <button formmethod="dialog">Cancel</button>
+            <button id="closeBtnTask">Confirm</button>
+          </div>
+        </form>
+        <p>Cette boîte de dialogue modale a un arrière-plan festif !</p>
+      </dialog>
+    </div>
     <div class="content"><h1>content</h1></div>
   </body>
 </html>
