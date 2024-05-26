@@ -44,6 +44,17 @@ showButtonProject.addEventListener("click", () => {
 });
 
 showButtonTask.addEventListener("click", () => {
+  const select = document.querySelector("#chooseProject");
+  // show and update the dropdown project list
+  select.innerHTML = "";
+  for (let i = 0; i < allMyProject.length; i++) {
+    let opt = allMyProject[i].name;
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+  }
+
   taskDialog.showModal();
 });
 
@@ -62,7 +73,7 @@ closeBtnTask.addEventListener("click", (event) => {
   let form = document.querySelector("#formTask");
   event.preventDefault();
 
-  AddNewTasks(toDoList);
+  AddNewTasks(allMyProject);
   displayAllTasks(allMyProject);
   taskDialog.close();
   form.reset();

@@ -12,7 +12,7 @@
       <div id="allProject">
         <dialog id="projectDialog">
           <h1>allProject</h1>
-          <form method="dialog">
+          <form method="dialog" id="formProject">
             <label for="projectName">Project Name</label>
             <input type="text" name="name" id="projectName" />
             <div>
@@ -33,15 +33,28 @@
       <div id="headerContent"></div>
       <dialog id="taskDialog">
         <h1>create your tasks</h1>
-        <form method="dialog">
+        <form method="dialog" id="formTask">
+          <label for="chooseProject"></label>
+          <select id="chooseProject">
+            <option>Choose a Project</option>
+          </select>
           <label for="title">title</label>
           <input type="text" name="title" id="title" />
           <label for="dueDate">dueDate</label>
-          <input type="text" name="dueDate" id="dueDate" />
+          <input type="datetime-local" name="dueDate" id="dueDate" />
           <label for="priority">priority</label>
-          <input type="text" name="priority" id="priority" />
+          <select id="priority" name="priority">
+            <option>Emergency</option>
+            <option selected>Important</option>
+            <option>Not Important</option>
+          </select>
           <label for="description">description</label>
-          <input type="text" name="description" id="description" />
+          <textarea
+            name="description"
+            id="description"
+            cols="20"
+            rows="5"
+          ></textarea>
           <div>
             <button formmethod="dialog">Cancel</button>
             <button id="closeBtnTask">Confirm</button>

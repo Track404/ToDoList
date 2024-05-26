@@ -1,18 +1,26 @@
 import createtoDoItems from "./createItem";
 
-export default function AddNewTasks(list) {
+export default function AddNewTasks(allProject) {
   const taskTitle = document.querySelector("#title");
   const taskDueDate = document.querySelector("#dueDate");
   const taskPriority = document.querySelector("#priority");
   const taskDescription = document.querySelector("#description");
   const headerTasks = document.querySelector("#headerContent");
+  const chooseProject = document.querySelector("#chooseProject");
 
-  let toDoList = new createtoDoItems(
+  let toDoItem = new createtoDoItems(
     taskTitle.value,
     taskDescription.value,
     taskDueDate.value,
     taskPriority.value
   );
+  for (let i = 0; i < allProject.length; i++) {
+    if (chooseProject.value == allProject[i].name) {
+      allProject[i].list.push(toDoItem);
+    }
+  }
+  console.log(allProject);
+  console.log(chooseProject.value);
   headerTasks.innerHTML = "";
-  list.addToList(toDoList);
+  //list.addToList(toDoItem);
 }
