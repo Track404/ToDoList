@@ -10,8 +10,17 @@
       <div id="profile"><h1>MyName</h1></div>
       <div id="allTasks"><h1>allTasks</h1></div>
       <div id="allProject">
-        <h1>allProject</h1>
+        <dialog>
+          <h1>allProject</h1>
+          <button autofocus>Fermer</button>
+          <form method="dialog">
+            <label for="projectName">Project Name</label>
+            <input type="text" name="name" id="projectName" />
+          </form>
+          <p>Cette boîte de dialogue modale a un arrière-plan festif !</p>
+        </dialog>
         <button id="createProject">Create Project</button>
+
         <div id="project"></div>
       </div>
     </div>
