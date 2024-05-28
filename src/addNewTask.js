@@ -5,7 +5,6 @@ export default function AddNewTasks(allProject) {
   const taskDueDate = document.querySelector("#dueDate");
   const taskPriority = document.querySelector("#priority");
   const taskDescription = document.querySelector("#description");
-  const headerTasks = document.querySelector("#headerContent");
   const chooseProject = document.querySelector("#chooseProject");
 
   let toDoItem = new createtoDoItems(
@@ -14,13 +13,11 @@ export default function AddNewTasks(allProject) {
     taskDueDate.value,
     taskPriority.value
   );
+
+  //loop true all project and choose the project that what selected
   for (let i = 0; i < allProject.length; i++) {
     if (chooseProject.value == allProject[i].name) {
       allProject[i].list.push(toDoItem);
     }
   }
-  console.log(allProject);
-  console.log(chooseProject.value);
-  headerTasks.innerHTML = "";
-  //list.addToList(toDoItem);
 }
