@@ -1,3 +1,4 @@
+import displayAllTasks from "./displayAllTasks";
 import displayTaskProject from "./displayTaskProject";
 
 export default function updateProject(allMyProject) {
@@ -12,5 +13,17 @@ export default function updateProject(allMyProject) {
       projectTitle.textContent = div.textContent;
       displayTaskProject(allMyProject, index);
     });
+  });
+}
+
+export function udpateAllTasks(allMyProject) {
+  const allTasksSelection = document.querySelector("#allTasks");
+
+  allTasksSelection.addEventListener("click", () => {
+    const headerTasks = document.querySelector("#contentTask");
+    headerTasks.innerHTML = "";
+    const projectTitle = document.querySelector("#projectTitle");
+    projectTitle.textContent = allTasksSelection.textContent;
+    displayAllTasks(allMyProject);
   });
 }

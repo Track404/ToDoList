@@ -9,7 +9,7 @@ import "./style.css";
 import DisplayAllProject from "./displayAllProject";
 import updateProject from "./updateProject";
 import displayTaskProject from "./displayTaskProject";
-
+import { udpateAllTasks } from "./updateProject";
 let items = new createtoDoItems(
   "the one",
   "yes",
@@ -45,6 +45,7 @@ const closeBtnTask = document.querySelector("#closeBtnTask");
 allProject(allMyProject);
 displayAllTasks(allMyProject);
 updateProject(allMyProject);
+udpateAllTasks(allMyProject);
 // Button to open dialog
 showButtonProject.addEventListener("click", () => {
   projectDialog.showModal();
