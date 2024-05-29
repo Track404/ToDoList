@@ -10,6 +10,7 @@ import DisplayAllProject from "./displayAllProject";
 import updateProject from "./updateProject";
 import displayTaskProject from "./displayTaskProject";
 import { udpateAllTasks } from "./updateProject";
+import deleteButton from "./deleteButton";
 let items = new createtoDoItems(
   "the one",
   "yes",
@@ -46,6 +47,7 @@ allProject(allMyProject);
 displayAllTasks(allMyProject);
 updateProject(allMyProject);
 udpateAllTasks(allMyProject);
+deleteButton(allMyProject);
 // Button to open dialog
 showButtonProject.addEventListener("click", () => {
   projectDialog.showModal();
@@ -87,8 +89,7 @@ closeBtnTask.addEventListener("click", (event) => {
     if (projectTitle.textContent == allMyProject[i].name) {
       displayTaskProject(allMyProject, i);
       break;
-    } else if (projectTitle.textContent == "allTask") {
-      alert("yes");
+    } else if (projectTitle.textContent == "allTasks") {
       displayAllTasks(allMyProject);
       break;
     }
@@ -98,6 +99,7 @@ closeBtnTask.addEventListener("click", (event) => {
 
   taskDialog.close();
   form.reset();
+  deleteButton(allMyProject);
 });
 
 //show the all task tab

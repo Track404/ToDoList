@@ -1,3 +1,5 @@
+import deleteButton from "./deleteButton";
+
 export default function DisplayAllProject(allMyProject) {
   const allProject = document.querySelector("#project");
   allProject.innerHTML = "";
@@ -10,4 +12,5 @@ export default function DisplayAllProject(allMyProject) {
 
     alltasks.appendChild(newDiv);
   }
+  deleteButton(allMyProject);
 }
