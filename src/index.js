@@ -11,15 +11,16 @@ import updateProject from "./updateProject";
 import displayTaskProject from "./displayTaskProject";
 import { udpateAllTasks } from "./updateProject";
 import deleteButton from "./deleteButton";
+import saveData, { getData } from "./saveData";
 let items = new createtoDoItems(
   "the one",
   "yes",
-  "01/02/2024",
+  new Date(),
   "High",
   "best thing to do"
 );
 
-const allMyProject = [];
+let allMyProject = [];
 //boiler plate template to show whats happenning on page
 let toDoList = new CreateList("Inbox");
 let toDoList1 = new CreateList("big project 2");
@@ -42,6 +43,11 @@ const showButtonProject = document.querySelector("#createProject");
 const showButtonTask = document.querySelector("#createTask");
 const closeBtnProject = document.querySelector("#closeBtnProject");
 const closeBtnTask = document.querySelector("#closeBtnTask");
+if (localStorage.length == 0) {
+  saveData(allMyProject);
+} else {
+  allMyProject = JSON.parse(localStorage.getItem("toDoList"));
+}
 
 allProject(allMyProject);
 displayAllTasks(allMyProject);
@@ -99,7 +105,6 @@ closeBtnTask.addEventListener("click", (event) => {
 
   taskDialog.close();
   form.reset();
-  deleteButton(allMyProject);
 });
 
 //show the all task tab

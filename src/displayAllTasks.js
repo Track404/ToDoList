@@ -1,4 +1,5 @@
 import deleteButton from "./deleteButton";
+import { format } from "date-fns";
 
 export default function displayAllTasks(allTasks) {
   const headerTasks = document.querySelector("#contentTask");
@@ -14,7 +15,10 @@ export default function displayAllTasks(allTasks) {
       deleteButton.setAttribute("data-list", i);
       deleteButton.setAttribute("data-number", j);
       deleteButton.textContent = "Delete";
-      newDiv.innerHTML = `${allTasks[i].list[j].title},${allTasks[i].list[j].dueDate}`;
+      newDiv.innerHTML = `${allTasks[i].list[j].title},${format(
+        allTasks[i].list[j].dueDate,
+        "MM/dd/yyyy 'at' H:mm"
+      )}`;
 
       alltasks.appendChild(newDiv);
       newDiv.appendChild(deleteButton);

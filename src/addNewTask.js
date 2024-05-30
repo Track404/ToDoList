@@ -1,5 +1,5 @@
 import createtoDoItems from "./createItem";
-
+import saveData from "./saveData";
 export default function AddNewTasks(allProject) {
   const taskTitle = document.querySelector("#title");
   const taskDueDate = document.querySelector("#dueDate");
@@ -20,4 +20,5 @@ export default function AddNewTasks(allProject) {
       allProject[i].list.push(toDoItem);
     }
   }
+  saveData(allProject);
 }
