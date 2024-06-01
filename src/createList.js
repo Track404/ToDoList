@@ -1,5 +1,6 @@
-export default function CreateList(name) {
+export default function CreateList(name, color) {
   this.name = name;
+  this.color = color;
   this.list = [];
 }
 

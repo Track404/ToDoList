@@ -12,6 +12,8 @@ import displayTaskProject from "./displayTaskProject";
 import { udpateAllTasks } from "./updateProject";
 import deleteButton from "./deleteButton";
 import saveData, { getData } from "./saveData";
+import taskModification from "./taskModfication";
+
 let items = new createtoDoItems(
   "the one",
   "yes",
@@ -22,10 +24,10 @@ let items = new createtoDoItems(
 
 let allMyProject = [];
 //boiler plate template to show whats happenning on page
-let toDoList = new CreateList("Inbox");
-let toDoList1 = new CreateList("big project 2");
-let toDoList2 = new CreateList("big project 3");
-let toDoList3 = new CreateList("big project 4");
+let toDoList = new CreateList("Inbox", "blue");
+let toDoList1 = new CreateList("big project 2", "yellow");
+let toDoList2 = new CreateList("big project 3", "lightgreen");
+let toDoList3 = new CreateList("big project 4", "red");
 
 toDoList.addToList(items);
 toDoList1.addToList(items);
@@ -54,6 +56,7 @@ displayAllTasks(allMyProject);
 updateProject(allMyProject);
 udpateAllTasks(allMyProject);
 deleteButton(allMyProject);
+taskModification(allMyProject);
 // Button to open dialog
 showButtonProject.addEventListener("click", () => {
   projectDialog.showModal();
