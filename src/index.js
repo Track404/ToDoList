@@ -13,6 +13,7 @@ import { udpateAllTasks } from "./updateProject";
 import deleteButton from "./deleteButton";
 import saveData, { getData } from "./saveData";
 import taskModification from "./taskModfication";
+import editButton from "./editButton";
 
 let items = new createtoDoItems(
   "the one",
@@ -41,8 +42,10 @@ toDoList3.addToMyProject(allMyProject, toDoList3);
 const allTasks = document.querySelector("#allTasks");
 const projectDialog = document.querySelector("#projectDialog");
 const taskDialog = document.querySelector("#taskDialog");
+
 const showButtonProject = document.querySelector("#createProject");
 const showButtonTask = document.querySelector("#createTask");
+const showButtonEdit = document.querySelector("#editBtn");
 const closeBtnProject = document.querySelector("#closeBtnProject");
 const closeBtnTask = document.querySelector("#closeBtnTask");
 if (localStorage.length == 0) {
@@ -56,7 +59,9 @@ displayAllTasks(allMyProject);
 updateProject(allMyProject);
 udpateAllTasks(allMyProject);
 deleteButton(allMyProject);
+editButton(allMyProject);
 taskModification(allMyProject);
+
 // Button to open dialog
 showButtonProject.addEventListener("click", () => {
   projectDialog.showModal();

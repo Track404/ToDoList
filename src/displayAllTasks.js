@@ -25,7 +25,7 @@ export default function displayAllTasks(allTasks) {
       if (allTasks[i].list[j].dueDate == "") {
         newDiv.innerHTML = `<div>${allTasks[i].list[j].title}</div><div>No Date
           
-        </div><div>${allTasks[i].list[j].priority}</div>`;
+        </div><div>${allTasks[i].list[j].priority}</div></div>`;
       } else {
         newDiv.innerHTML = `<div>${
           allTasks[i].list[j].title

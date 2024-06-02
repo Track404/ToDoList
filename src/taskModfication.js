@@ -11,19 +11,31 @@ export default function taskModification(allMyProject) {
       let list = div.dataset.list;
       for (let i = 0; i < allMyProject.length; i++) {
         if (projectTitle.textContent == allMyProject[i].name) {
-          content.innerHTML = `<div>${allMyProject[i].list[index].title}</div>
-            <div>${allMyProject[i].list[index].dueDate}</div>
-            <div>${allMyProject[i].list[index].priority}</div>
-            <div>${allMyProject[i].list[index].description}</div>
+          content.innerHTML = `<div>Name: ${
+            allMyProject[i].list[index].title
+          }</div>
+            <div>DueDate: ${format(
+              allMyProject[i].list[index].dueDate,
+              "MM/dd/yyyy 'at' H:mm"
+            )}</div>
+            <div>Priority: ${allMyProject[i].list[index].priority}</div>
+            <div> Description: ${allMyProject[i].list[index].description}</div>
             
             `;
 
           break;
         } else if (projectTitle.textContent == "allTasks") {
-          content.innerHTML = `<div>${allMyProject[list].list[index].title}</div>
-            <div>${allMyProject[list].list[index].dueDate}</div>
-            <div>${allMyProject[list].list[index].priority}</div>
-            <div>${allMyProject[list].list[index].description}</div>
+          content.innerHTML = `<div>Name: ${
+            allMyProject[list].list[index].title
+          }</div>
+            <div>DueDate: ${format(
+              allMyProject[list].list[index].dueDate,
+              "MM/dd/yyyy 'at' H:mm"
+            )}</div>
+            <div>Priority: ${allMyProject[list].list[index].priority}</div>
+            <div> Description: ${
+              allMyProject[list].list[index].description
+            }</div>
             
             `;
 

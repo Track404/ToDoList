@@ -5,6 +5,7 @@ export default function DisplayAllProject(allMyProject) {
     const alltasks = document.querySelector("#project");
     const newColor = document.createElement("div");
     const newDiv = document.createElement("div");
+
     newColor.classList.add("projectColor");
     newDiv.classList.add("projectSelection");
     newColor.setAttribute("data-color", i);

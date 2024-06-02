@@ -9,9 +9,11 @@
     <div class="sidebar">
       <div id="profile">
         <div id="imageProfile"></div>
-        <h1>MyName</h1>
+        <h1>MYTrack</h1>
       </div>
-      <div id="allTasks"><h1>allTasks</h1></div>
+      <div id="allTasks">
+        <h1>allTasks</h1>
+      </div>
       <div id="allProject">
         <div class="myLists">
           <h1>MyLists</h1>
@@ -56,7 +58,7 @@
       <div id="headerContent"></div>
       <dialog id="taskDialog">
         <h1>create your tasks</h1>
-        <form method="dialog" id="formTask">
+        <form method="dialog" id="formTask" class="formTask">
           <div>
             <label for="chooseProject">Choose Your List</label>
             <select id="chooseProject">
@@ -113,12 +115,55 @@
         <h2>Delete</h2>
         <h2>Edit</h2>
       </div>
+      <dialog id="editDialog">
+        <h1>Edit your Tasks</h1>
+        <form method="dialog" id="formEdit" class="formTask">
+          <div>
+            <label for="title">title</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div>
+            <label for="dueDate">dueDate</label>
+            <input
+              type="datetime-local"
+              name="dueDate"
+              id="dueDate"
+              min="2024-05-01T08:30"
+              max="2024-09-30T16:30"
+            />
+          </div>
+          <div>
+            <label for="priority">priority</label>
+            <select id="priority" name="priority">
+              <option>Emergency</option>
+              <option selected>Important</option>
+              <option>Not Important</option>
+            </select>
+          </div>
+          <div>
+            <label for="description">description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="20"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <div>
+            <div>
+              <button formmethod="dialog">Cancel</button>
+              <button id="closeBtnTask">Confirm</button>
+            </div>
+          </div>
+        </form>
+      </dialog>
       <dialog id="contentDialog">
+        <h2>Task Description</h2>
         <div id="expandContent"></div>
         <form method="dialog">
-          <div>
-            <button formmethod="dialog">Cancel</button>
-            <button id="closeBtnDescription">Confirm</button>
+          <div id="editBtnDiv">
+            <button formmethod="dialog">Quit</button>
           </div>
         </form>
       </dialog>
